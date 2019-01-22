@@ -112,6 +112,9 @@ void print_tab_distrib(int tableau[],int longueur)
 
 
 	if (id == p-1) std::cout  << std::endl;
+    
+    MPI_Bcast (&finished, 1, MPI_INT, p-1, MPI_COMM_WORLD);
+    
 }
 
 
@@ -183,8 +186,13 @@ void init_tab_random(int tabLocal[],int tailleLocal, int modeInit)
 	}
 
 	if (id==0) std::cout  << "Impression tableau initial" << std::endl;
-	print_tab_distrib_gather(tabLocal,tailleLocal);
-	//print_tab_distrib(tabLocal,tailleLocal);
+	//print_tab_distrib_gather(tabLocal,tailleLocal);
+	print_tab_distrib(tabLocal,tailleLocal);
+    print_tab_distrib(tabLocal,tailleLocal);
+    print_tab_distrib(tabLocal,tailleLocal);
+    print_tab_distrib(tabLocal,tailleLocal);
+    print_tab_distrib(tabLocal,tailleLocal);
+    print_tab_distrib(tabLocal,tailleLocal);
 
 	//if (id==p-1) std::cout  <<  std::endl <<  std::endl;
 
@@ -226,8 +234,8 @@ int main (int argc, char *argv[]) {
 	//Sortie du resultat
 
 	if (id==0) std::cout  << "\nImpression tableau final" << std::endl;
-	//print_tab_distrib(tabLocal, tailleLocal);
-	print_tab_distrib_gather(tabLocal, tailleLocal);
+	print_tab_distrib(tabLocal, tailleLocal);
+	//print_tab_distrib_gather(tabLocal, tailleLocal);
 
 	// on libere l'espace memoire avant de sortir
 	delete [] tabLocal;
