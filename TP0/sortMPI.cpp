@@ -187,12 +187,7 @@ void init_tab_random(int tabLocal[],int tailleLocal, int modeInit)
 
 	if (id==0) std::cout  << "Impression tableau initial" << std::endl;
 	//print_tab_distrib_gather(tabLocal,tailleLocal);
-	print_tab_distrib(tabLocal,tailleLocal);
-    print_tab_distrib(tabLocal,tailleLocal);
-    print_tab_distrib(tabLocal,tailleLocal);
-    print_tab_distrib(tabLocal,tailleLocal);
-    print_tab_distrib(tabLocal,tailleLocal);
-    print_tab_distrib(tabLocal,tailleLocal);
+	//print_tab_distrib(tabLocal,tailleLocal);
 
 	//if (id==p-1) std::cout  <<  std::endl <<  std::endl;
 
